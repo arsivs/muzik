@@ -1,0 +1,97 @@
+/* Menu Buton */
+.ust_bar .menu {
+	width: 30px;
+	height: 23px;
+	display: inline-block;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.ust_bar .menu .bar {
+	width: 30px;
+	height: 6px;
+	border: 2px solid #fff;
+	border-radius: 3px;
+	position: relative;
+	transition: all .5s cubic-bezier(.23,.5,.32,.5);
+}
+.ust_bar .menu .bar:nth-child(2) {
+	margin-top: 2px;
+}
+.ust_bar .menu .bar:nth-child(3) {
+	margin-top: 2px;
+}
+.ust_bar .menu.active .bar:nth-child(1) {
+	transform: translate3d(0, 8px, 0) rotate(405deg);
+}
+.ust_bar .menu.active .bar:nth-child(2) {
+	transform: scale(0.2);
+	opacity: 0;
+}
+.ust_bar .menu.active .bar:nth-child(3) {
+	transform: translate3d(0, -8px, 0) rotate(-405deg);
+}
+/* Menu Buton Bitis */
+
+/* Notification Message Start */
+.notif-cont {
+	display: none;
+	position: fixed;
+	width: 250px;
+	max-height: 75%;
+	left: 30px;
+	bottom: 60px;
+	z-index: 2;
+	overflow: hidden;
+}
+.notif {
+	width: 250px;
+	padding: 10px;
+	margin: 10px 0;
+	color: #FFF;
+	border-radius: 4px;
+	padding-left: 45px;
+	position: relative;
+	opacity: 0;
+	overflow: hidden;
+	animation: notif 2400ms ease-in-out;
+}
+.notif::after {
+	font-family: "fontello";
+	content: "";
+	position: absolute;
+	background-color: rgb(0 0 0 / 17%);
+	font-size: 23px;
+	font-weight: 100;
+	color: #efefef;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 36px;
+	line-height: 40px;
+	text-align: center;
+}
+@keyframes notif {
+	0% { opacity: 0; }
+	30% { opacity: 1; }
+	80% { opacity: 1; }
+	100% { opacity: 0; }
+}
+.notif.warning {
+	background: #FFC107;
+}
+.notif.warning::after {
+	content: "\e810";
+}
+.notif.success {
+	background: #2ECC71;
+}
+.notif.success::after {
+	content: "\e80f";
+}
+.notif.error {
+	background: #C0392B;
+}
+.notif.error::after {
+	content: "\e811";
+}
+/* Notification Message Stop */

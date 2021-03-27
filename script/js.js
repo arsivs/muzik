@@ -25,6 +25,6 @@ function include(url) {
 	document.getElementsByTagName('head').item(0).appendChild(script);
 }
 
-include("script/yt_search.js");
-include("script/temizle.js");
-include("script/plugins.js");
+include("//arsivs.github.io/muzik/script/yt_search.js");
+include("//arsivs.github.io/muzik/script/temizle.js");
+include("//arsivs.github.io/muzik/script/plugins.js");

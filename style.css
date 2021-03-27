@@ -1,0 +1,447 @@
+@import url("font/style.css");
+@import url("ex_styles.css");
+
+html {
+	background-color: #f2f4f8;
+	overflow-x: hidden;
+}
+html, body {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: transparent;
+}
+body {
+	font-size: 14px;
+	color: #788188;
+	-webkit-font-smoothing: antialiased;
+	line-height: 1.40;
+}
+* {
+	
+	font-family: 'TitilliumRegular',sans-serif;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	outline: none;
+}
+.yukleniyor {
+    background: #374C59;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+    z-index: 99999;
+}
+.yukleniyor p {
+	position: relative;
+	font-family: sans-serif;
+	font-size: 60px;
+	letter-spacing: 4px;
+	overflow: hidden;
+	background: linear-gradient(90deg, #2196f3, #dcf836, #2196f3);
+	background-repeat: no-repeat;
+	background-size: 80%;
+	animation: TextEffect 3s linear infinite;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+.yukleniyor span {
+	display: inline-block;
+	width: 85px;
+	height: 200px;
+	overflow: hidden;
+	position: relative;
+}
+.yukleniyor span::before,
+.yukleniyor span::after {
+	font-family: "fontello";
+	content: "\e801";
+	position: absolute;
+	font-size: 50px;
+	font-weight: 100;
+	color: #e15b64;
+	left: 0;
+	bottom: 0;
+}
+.yukleniyor span::before {
+	animation: bounce 1.5s ease infinite;
+}
+.yukleniyor span::after {
+	content: "\e809";
+	color: #f8b26a;
+	margin-left: 50px;
+	left: -15px;
+	animation: bounce 2s ease infinite;
+}
+.yukleniyor span:last-child {
+	width: 90px;
+	left: -35px;
+}
+.yukleniyor span:last-child::before {
+	content: "\e809";
+	color: #abbd81;
+	animation: bounce 1.4s ease infinite;
+}
+.yukleniyor span:last-child::after {
+	content: "\e801";
+	color: #f8b26a;
+	left: 5px;
+	animation: bounce 1.6s ease infinite;
+}
+@keyframes TextEffect {
+	0% { background-position: -200%; }
+	100% { background-position: 400%; }
+}
+@keyframes bounce {
+	0%   { transform: translateY(100px); }
+	55%  { transform: translateY(-100px); }
+	100% { transform: translateY(100px); }
+}
+.progress {
+	display: none;
+	position: absolute;
+	top: 60px;
+	width: 100%;
+	height: 3px;
+	background: #ff9595;
+	box-shadow: 0px 0px 6px 0px rgba(255,0,0,1);
+}
+.progress::before {
+	content: "";
+	position: absolute;
+	width: 100px;
+	height: 100%;
+	background-color: red;
+	animation: prog 2s ease-in-out infinite;
+}
+@keyframes prog {
+	0%   { left: 0; }
+	40%  { width: 400px; }
+	80%  { width: 200px; }
+	100% { left: 100%; }
+}
+
+
+.body_ic {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+.body_ic > div  {
+	display: table-row;
+	vertical-align: top;
+}
+.max_gen {
+	display: flex;
+	width: 1000px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.ust_bar {
+	background-color: #4cb6cb;
+	height: 60px;
+}
+.ust_bar_ic {
+	display: table;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.ust_bar_ic > div {
+	display: table-cell;
+	vertical-align: middle;
+}
+.ust_bar .sol {
+	width: 210px;
+}
+.ust_bar .sol img {
+	display: inline-block;
+	vertical-align: middle;
+}
+.ust_bar .form_ara {
+	position: relative;
+}
+.ust_bar .form_ara input[type="text"] {
+	width: 100%;
+	background: #6bc8db;
+	border: 0;
+	padding: 8px 55px 8px 20px;
+	font-weight: bold;
+	font-size: 16px;
+	color: #000;
+	text-shadow: 0 0 6px #788188;
+	-webkit-box-shadow: inset 0px 0px 10px 3px rgb(0 0 0 / 8%);
+	-moz-box-shadow: inset 0px 0px 10px 3px rgb(0 0 0 / 8%);
+	box-shadow: inset 0px 0px 10px 3px rgb(0 0 0 / 8%);
+
+}
+.ust_bar .form_ara button[type="submit"] {
+	position: absolute;
+	z-index: 1;
+	right: 0;
+	height: 100%;
+	cursor: pointer;
+	font-size: 25px;
+	padding: 0px 10px;
+	color: #fff;
+	background: none;
+	border: 0;
+}
+.ust_bar .sag {
+	width: 100px;
+	text-align: right;
+}
+.ust_bar .menu_ic {
+	display: none;
+	position: absolute;
+	background-color: #4cb6cb;
+	top: 100%;
+	right: 0;
+	margin-top: 10px;
+	border-radius: 3px;
+	padding: 7px;
+}
+.ust_bar .menu_ic::after {
+	content: "";
+	position: absolute;
+	top: -20px;
+	right: 7px;
+	border: 10px solid transparent;
+	border-bottom-color: #8ce2f3;
+}
+.ust_bar .menu_ic.active {
+	display: block;
+}
+.ust_bar .menu_ic a {
+	display: block;
+	width: 190px;
+	color: #fff;
+	background-color: #48c6df;
+	border-bottom: 1px solid #258ecd;
+	padding: 10px;
+	text-decoration: none;
+	text-align: center;
+}
+.ust_bar .menu_ic a:last-child {
+	border: 0;
+}
+
+
+.orta_kisim {
+	background-image: url("https://1.bp.blogspot.com/-yE0w0vExQN0/YF86q8IgrQI/AAAAAAAAANE/C0oKrSavF_MihaDxaJkJ6wrq-I2dg0QsACLcBGAsYHQ/s0/arkaplan.png");
+	background-repeat: round;
+}
+.orta_kisim .max_gen {
+	width: 100%;
+	overflow: auto;
+}
+.orta_kisim .orta_ic {
+	display: block;
+	width: 100%;
+}
+.orta_kisim .form_ara {
+	display: block;
+	margin: 0 auto;
+	margin-top: 180px;
+	width: 600px;
+	height: max-content;
+	position: relative;
+}
+.orta_kisim .form_ara input[type="text"] {
+	width: 100%;
+	font-size: 17px;
+	padding: 14px 84px 14px 20px;
+	line-height: 1.33;
+	border-radius: 7px;
+	color: #555;
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+.orta_kisim .form_ara button[type="submit"] {
+	position: absolute;
+	z-index: 1;
+	right: 0;
+	height: 100%;
+	cursor: pointer;
+	font-size: 25px;
+	padding: 5px 12px;
+	color: #fff!important;
+	background-color: #4CB6CB;
+	border-radius: 0 7px 7px 0;
+	border: 1px solid rgba(90,106,122,0.57);
+}
+.orta_kisim .form_ara button[type="submit"]:hover {
+    background-color: #797DFF;
+}
+#yaz{
+	margin: 30px 0;
+}
+.liste {
+	width: 800px;
+	margin: 0 auto;
+	margin-bottom: 3px;
+	background-color: #fff;
+	border: 1px solid rgb(120 129 136 / 28%);
+}
+.liste:hover {
+	background-color: #fcfbfb;
+}
+.liste:first-child {
+	
+}
+.liste > div {
+	display: inline-block;
+	vertical-align: middle;
+}
+.liste .sol {
+	width: 645px;
+	padding: 6px 10px 6px 45px;
+	cursor: pointer;
+	position: relative;
+}
+.liste .sol b {
+    display: block;
+}
+.liste .sol span {
+	display: block;
+	font-size: 13px;
+}
+.liste .sol span u,
+.liste .sol span i {
+	font-style: normal;
+	text-decoration-line: none;
+}
+.liste .sol::before {
+	font-family: "fontello";
+	content: "\e800";
+	position: absolute;
+	width: 22px;
+	height: 22px;
+	top: 50%;
+	margin-top: -12px;
+	left: 10px;
+	font-size: 18px;
+	border: 1.8px solid #788188;
+	border-radius: 50%;
+	text-indent: 8px;
+	line-height: 24px;
+}
+.liste .sag {
+
+}
+.liste .sag i {
+	font-size: 16px;
+	padding: 10px 5px;
+	vertical-align: middle;
+	text-decoration: none;
+	color: #788188;
+	cursor: pointer;
+}
+.liste .sag i.sure {
+	display: inline-block;
+	width: 41px;
+	background-color: #edf2f3;
+	border-radius: 3px;
+	box-shadow: 0 0px 5px #ccc inset;
+	padding: 2px 5px;
+	text-align: center;
+	font-size: 12px;
+	font-style: normal;
+	cursor: inherit;
+}
+
+
+.alt_kisim {
+	background-color: #5a6a7a;
+	height: 60px;
+}
+.player {
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+.player .sol {
+	width: 175px;
+}
+.player > div {
+	display: table-cell;
+	vertical-align: middle;
+}
+.player .sol i,
+.player .sag i {
+	display: inline-block;
+	width: 35px;
+	line-height: 60px;
+	color: #c9d0d7;
+	font-size: 24px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+.player .sol i:hover,
+.player .sag i:hover {
+	color: #fff;
+}
+.player .sol i.icon-play,
+.player .sol i.icon-pause {
+	font-size: 40px;
+	width: 50px;
+}
+.player .sol i.sure,
+.player .sag i.sure {
+	width: 40px;
+	font-style: inherit;
+	font-size: 14px;
+	text-align: center;
+}
+.player .sag {
+	width: 185px;
+	text-align: right;
+}
+.player .sag i {
+	font-size: 18px;
+}
+.player .sag i.sure {
+	margin-right: 10px;
+}
+.player .sag .volum {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	width: 50px;
+	cursor: pointer;
+	background-color: #fff;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	height: 6px;
+}
+.player .sag .bar {
+	width: 80%;
+	top: 0;
+	bottom: 0;
+	position: absolute;
+	background-color: #4cc0c1;
+	border-radius: 0 2px 2px 0;
+	transition: width .10s ease;
+}
+.player .sag .bar::after {
+	content: "";
+	border-radius: 12px;
+	position: absolute;
+	cursor: pointer;
+	width: 12px;
+	height: 12px;
+	top: -5px;
+	right: -6px;
+	background-color: #fff;
+	border: 1px solid #eee;
+	border-color: rgba(0,0,0,0.1);
+	-webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+	box-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+}

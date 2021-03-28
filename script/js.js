@@ -1,8 +1,12 @@
-﻿window.onload = function() {
+﻿var yukleniyor = document.querySelector(".yukleniyor");
+
+window.onload = function() {
 	var id = window.self.location.pathname.split("-").pop();
-	if(id != "/")
+	if(id != "/"){
 		yt_search( base64De(id) );
-	document.querySelector(".yukleniyor").remove();
+	}else {
+		yukleniyor.remove();
+	}
 }
 
 function yaz(items){
@@ -18,6 +22,8 @@ function yaz(items){
 		liste.querySelector('.sag a').href = item.url;
 		yaz.appendChild(liste);
 	});
+	if(yukleniyor != null)
+		yukleniyor.remove();
 }
 
 function include(url) {

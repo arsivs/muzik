@@ -64,7 +64,7 @@ function yt_videos(ids){
 					duration: time.join(":"),
 					date: tarih(item.snippet.publishedAt),
 					popularity: views(item.statistics.viewCount),
-					url: url_slug(item.snippet.title)+"-"+base64En(item.id)
+					url: url_slug(item.snippet.title, {limit:40})+"-"+base64En(item.id)
 				});
 			});
 			yaz(res);

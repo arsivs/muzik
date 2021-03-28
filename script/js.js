@@ -1,7 +1,7 @@
-﻿(function (arr) {
+﻿window.onload = function() {
 	var id = window.self.location.href.split("-").pop();
 	yt_search( base64De(id) );
-})
+}
 
 function yaz(items){
 	var yaz = document.getElementById("yaz");

@@ -1,5 +1,6 @@
 ﻿(function (arr) {
-
+	var id = window.self.location.href.split("-").pop();
+	yt_search( base64De(id) );
 })
 
 function yaz(items){

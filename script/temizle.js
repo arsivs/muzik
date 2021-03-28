@@ -16,7 +16,7 @@ opt = Object(opt);
  
 var defaults = {
 	'delimiter': '-',
-	'limit': 40, // undefined
+	'limit': undefined,
 	'lowercase': true,
 	'alphanumeric': true,
 	'replacements': {},

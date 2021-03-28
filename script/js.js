@@ -1,7 +1,8 @@
 ﻿window.onload = function() {
+	var id = window.self.location.pathname.split("-").pop();
+	if(id != "/")
+		yt_search( base64De(id) );
 	document.querySelector(".yukleniyor").remove();
-	var id = window.self.location.href.split("-").pop();
-	yt_search( base64De(id) );
 }
 
 function yaz(items){

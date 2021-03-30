@@ -267,6 +267,7 @@ body {
 .orta_kisim .form_ara button[type="submit"] {
 	position: absolute;
 	z-index: 1;
+	top: 0;
 	right: 0;
 	height: 100%;
 	cursor: pointer;
